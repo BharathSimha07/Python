@@ -1,0 +1,14 @@
+from collections import Counter
+import operator
+
+def company_logo(string):
+    x = Counter(string)
+    x = dict(sorted(x.items(), key=lambda x: (-x[1], x[0])))
+    s = set(x)
+    if len(s) > 3 and len(s) <= 10**4:
+        for k, v in (list(x.items())[:3]):
+            print(k, v)
+        
+if __name__ == '__main__':
+    s = input()
+    company_logo(s)
