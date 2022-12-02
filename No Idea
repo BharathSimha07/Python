@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+from operator import itemgetter
+
+n, m = map(int, input().split())
+arr = map(int, input().split())
+A = map(int, input().split())
+B = map(int, input().split())
+
+counter = Counter(arr)
+happiness = sum(itemgetter(*A)(counter))
+sadness = sum(itemgetter(*B)(counter))
+
+print(happiness - sadness)
